@@ -90,15 +90,11 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
             Solver.fd_solve(N, plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------
     
-       --> see reyn_finDiff.py, reyn_velocity.py   
-           
     B.) T.G.-ELT solver 
     
           #--------------------------------------------------------------------   
             Solver.fd_TG_ELT_solve(N, plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------   
-        
-       --> see reyn_pressure_ELT.py, reyn_velocity.py
         
     C.) VA-ELT solver
     
@@ -106,20 +102,16 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
             Solver.fd_VA_ELT_solve(N, plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------  
           
-       --> see reyn_pressure_ELT.py, reyn_velocity_ELT.py
-          
-    D.) PLT solver
+    D.) PLT solvers (order epsilon^2 and epsilon^4)
     
           #--------------------------------------------------------------------   
             Solver.fd_pert_solve(N, order=2,  plot=plots_on,  zoom=zoom_on)
             
             Solver.fd_pert_solve(N, order=4,  plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------   
-
-       --> see reyn_perturbed.py
-       
    
-    --> see reyn_control.py,  graphics.py
+    --> see reyn_control.py, graphics.py, reyn_finDiff.py, reyn_velocity.py, 
+        reyn_pressure_ELT.py, reyn_velocity_ELT.py, reyn_perturbed.py
 #------------------------------------------------------------------------------
 # STOKES SOLVER
 #------------------------------------------------------------------------------
