@@ -118,7 +118,7 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
 
       --> see reyn_perturbed.py
        
-    --> see reyn_control.py,  graphics.py
+   --> see reyn_control.py,  graphics.py
  
 #------------------------------------------------------------------------------
 # STOKES SOLVER
