@@ -62,7 +62,7 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
           #--------------------------------------------------------------------    
             U = 0
             Q = 1
-            BC = bc.Mixed(U,Q_)
+            BC = bc.Mixed(U,Q)
           #--------------------------------------------------------------------   
     
     --> See boundary.py
@@ -277,8 +277,8 @@ The l2 norm relative error in pressure and velocity is plotted
 
 3. Run the script compare.py
 
-    - plots the l2 norm relative error for pressure and for velocity 
+    - The l2 norm relative error for pressure and for velocity are plotted
     
-    - adjust plot_2D in graphics.py to set y_lim, x_lim, and legend location as needed
+    - Adjust the plot_2D method in graphics.py to set y_lim, x_lim, and legend location as needed
 
 
