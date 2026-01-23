@@ -134,7 +134,7 @@ To use the Stokes solver, use file stokes_run.py
 
 3. Initialize the Solver and grid scale (N)
 
-    - Solver: class with solve methods
+    - Solver: class with iterative solve methods
     - N: grid scale (dx = 1/N)
     - Re: Reynolds number for stream-velocity Navier-Stokes equations (use Re=0 for Stokes solver)
     
