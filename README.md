@@ -8,8 +8,9 @@ Details on the extended lubrication theory models (VA-ELT and T.G.-ELT), and the
 perturbed lubrication theory models (epsilon^2-PLT and epsilon^4-PLT) can be found in the paper.
 
 #------------------------------------------------------------------------------
-# REYNOLDS, ELT & PLT SOLVERS
+# Reynolds, ELT & PLT Solvers
 #------------------------------------------------------------------------------
+
 To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
 
 1. Choose an Example and set the geometry parameters (args)
@@ -123,6 +124,7 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
 #------------------------------------------------------------------------------
 # STOKES SOLVER
 #------------------------------------------------------------------------------
+
 To use the Stokes solver, use file stokes_run.py
 
 1. Choose an Example and set the geometry parameters (args)
@@ -239,6 +241,7 @@ To use the Stokes solver, use file stokes_run.py
 #------------------------------------------------------------------------------
 # SOLUTION COMPARISION
 #------------------------------------------------------------------------------
+
 To compare the velocity and pressure solutions from the Reynolds, ELT, PLT and 
 Stokes methods, use the file compare.py
 
