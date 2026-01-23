@@ -123,11 +123,11 @@ To use the Stokes solver, use file stokes_run.py
     
     - Examples are set identically to reyn_run.py above
     
-    A.) backward facing step (examples.BFS)
+    A.) backward facing step
     
     B.) triangular textured slider
     
-    C.) logistic step (examples.logistic)
+    C.) logistic step
     
     --> See stokes_examples.py, stokes_heights.py, domain.py
     
