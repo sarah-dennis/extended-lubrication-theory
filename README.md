@@ -1,4 +1,4 @@
-# extended-lubrication-theory
+# EXTENDED LUBRICATION THEORY
 Code for, 'Comparison of Extended Lubrication Theories for Stokes Flow' (Sarah Dennis & Thomas Fai, 2026)
 
 This project includes finite difference solvers for the Reynolds equation, the Stokes equation,
@@ -8,7 +8,7 @@ Details on the extended lubrication theory models (VA-ELT and T.G.-ELT), and the
 perturbed lubrication theory models (epsilon^2-PLT and epsilon^4-PLT) can be found in the paper.
 
 #------------------------------------------------------------------------------
-# Reynolds, ELT & PLT Solvers
+# REYNOLDS, ELT & PLT SOLVERS
 #------------------------------------------------------------------------------
 
 To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
