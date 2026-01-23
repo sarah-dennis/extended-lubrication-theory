@@ -172,12 +172,10 @@ To use the Stokes solver, use file stokes_run.py
     - The solver checks this error and saves the current solution every 500 iterations
     - The solver will also print the current error and iteration number to the console
     - The parameters {err_tol, max_iters, error_mod, write_mod} can be updated in stokes_control.py
+    - solutions are written to ./stokes_examples/example_name/example_name_N
 
     A.) run a new solution at grid size N
     
-        - the solution will be saved automatically to ./stokes_examples
-        - this will overwrite any existing solution to the same example of the same grid scale
-        
           #--------------------------------------------------------------------    
             Solver.new_run(N)
           #--------------------------------------------------------------------    
@@ -188,8 +186,8 @@ To use the Stokes solver, use file stokes_run.py
             Solver.load_run(N)
           #--------------------------------------------------------------------      
           
-    C.) run a new solution starting at grid size N
-        then interpolate the solution to grid size 2*N and run
+    C.) run a new solution starting at grid size N,
+        then interpolate the solution to grid size 2*N and run,
         repeat, ending with grid size (2^k)*N
     
           #--------------------------------------------------------------------
@@ -197,8 +195,8 @@ To use the Stokes solver, use file stokes_run.py
             Solver.new_run_many(N, 2, k)
           #--------------------------------------------------------------------    
     
-    D.) load and run an existing solution starting at grid size N
-        then interpolate the solution to grid size 2*N and run
+    D.) load and run an existing solution starting at grid size N,
+        then interpolate the solution to grid size 2*N and run,
         repeat, ending with grid size (2^k)*N   
 
           #--------------------------------------------------------------------
@@ -206,8 +204,8 @@ To use the Stokes solver, use file stokes_run.py
             Solver.load_run_new_many(N, 2, k)
           #--------------------------------------------------------------------    
         
-    E.) load and run an existing solution starting at grid size N
-        then load and run an existing solution at grid size 2*N
+    E.) load and run an existing solution starting at grid size N,
+        then load and run an existing solution at grid size 2*N,
         repeat, ending with grid size (2^k)*N   
 
           #--------------------------------------------------------------------
