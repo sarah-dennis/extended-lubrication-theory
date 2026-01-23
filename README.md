@@ -197,7 +197,7 @@ To use the Stokes solver, use file stokes_run.py
     
     F.) load an existing solution at grid size N
         
-        - this is the only method that computes the pressure and returns the solution
+    - this is the only method that computes the pressure and returns the solution
 
           #--------------------------------------------------------------------   
             p, u, v, stream = Solver.load(N)
