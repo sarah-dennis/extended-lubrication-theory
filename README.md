@@ -157,14 +157,14 @@ To use the Stokes solver, use file stokes_run.py
 
 4. Run the iterative Stokes solver
 
-    - The iterative Stokes solver computes the stream function and velocity, 
-      in general the pressure is not computed
+    - The iterative Stokes solver computes the stream function and velocity; 
+      in general, the pressure is not computed (unless using load(N) or load_plot(N))
     - The iterative solver will run until the error in the stream function between
       iterations falls below 10^-8, or until the maximum number of iterations has been reached
     - The solver checks this error and saves the current solution every 500 iterations
     - The solver will also print the current error and iteration number to the console
     - The parameters {err_tol, max_iters, error_mod, write_mod} can be updated in stokes_control.py
-    - solutions are written to ./stokes_examples/example_name/example_name_N
+    - Solutions are written to ./stokes_examples/example_name/example_name_N
 
     A.) run a new solution at grid size N
     
