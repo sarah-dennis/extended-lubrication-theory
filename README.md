@@ -121,24 +121,15 @@ To use the Stokes solver, use file stokes_run.py
 
 1. Choose an Example and set the geometry parameters (args)
     
-    - Examples are set identically to reyn_run.py above
-    
-    A.) backward facing step
-    
-    B.) triangular textured slider
-    
-    C.) logistic step
+    - Examples are set identically to step 1. for reyn_run.py above
     
     --> See stokes_examples.py, stokes_heights.py, domain.py
     
 
 2. Set the boundary conditions 
 
-    - Boundary conditions are set identically to reyn_run.py above
-
-    - U: lower surface velocity
-    - Q: flux 
-
+    - Boundary conditions are set identically to step 2. for reyn_run.py above
+    
     --> See boundary.py
 
 3. Initialize the Solver and grid scale (N)
