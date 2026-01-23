@@ -110,8 +110,8 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
           
     D.) PLT solver
     
-          epsilon^2 PLT : order = 2 
-          epsilon^4 PLT : order = 4 
+        - epsilon^2 PLT : order = 2 
+        - epsilon^4 PLT : order = 4 
           
           #--------------------------------------------------------------------   
             Solver.fd_pert_solve(N, order=4,  plot=plots_on, scaled=scaled_on, zoom=zoom_on)
