@@ -9,13 +9,11 @@ import domain as dm
 
 def make_ELT_velocity(height, BC, adj_pressure):
 
-    # derivatives of the reynolds pressure
     pxs = adj_pressure.reyn_pxs
     p2xs = adj_pressure.reyn_p2xs
     p3xs = adj_pressure.reyn_p3xs
     p4xs = adj_pressure.reyn_p4xs
-    
-    # sigmas = adj_pressure.sigmas
+
     sigma_xs = adj_pressure.sigma_xs
     sigma_2xs = adj_pressure.sigma_2xs
 

@@ -33,7 +33,7 @@ def make_adj_ps(height, BC, reyn_ps, TG=False):
         px = pxs[i]
         pxx = p2xs[i]
 
-        phi1x = -(pxx*h + px*hx)/2 + BC.U/(h**2)*hx #*visc
+        phi1x = -(pxx*h + px*hx)/2 + BC.U/(h**2)*hx 
 
         for j in range(height.Ny):
             y = height.ys[j]
@@ -47,7 +47,7 @@ def make_adj_ps(height, BC, reyn_ps, TG=False):
                     ps_adj[j,i] = reyn_ps[i] + adj
                     
                 else:
-                    ps_adj[j,i] = reyn_ps[i] + adj + sigmas[i] #*visc 
+                    ps_adj[j,i] = reyn_ps[i] + adj + sigmas[i] 
 
 
     sigma_derivs = [sigmas, sigma_xs, sigma_2xs]
@@ -68,9 +68,9 @@ def adj_rhs(height, BC, pxs, p2xs, p3xs, p4xs):
         p3x = p3xs[i]
         p4x = p4xs[i]
 
-        v_a = (h**5)*p4x + 5*(h**4)*p3x*hx #/visc
-        v_b = (h*p4x+ 3*hx*p3x + h3x*px + 3*h2x*p2x)*(h**4) #/visc
-        v_c = 4*(h*p3x + 2*hx*p2x + h2x*px)*(h**3)*hx#/visc
+        v_a = (h**5)*p4x + 5*(h**4)*p3x*hx 
+        v_b = (h*p4x+ 3*hx*p3x + h3x*px + 3*h2x*p2x)*(h**4)
+        v_c = 4*(h*p3x + 2*hx*p2x + h2x*px)*(h**3)*hx
         v_d = ((h**2)*h3x-2*(hx**3)-2*h*hx*h2x)
     
         vs[i] = 3*v_a/20 - (v_b + v_c)/4 + v_d*BC.U/2 

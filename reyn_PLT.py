@@ -13,8 +13,6 @@ import boundary as bc
 from reyn_pressure import Pressure
 from reyn_velocity import Velocity
 from reyn_heights import PWL_Height
-# H=1
-# slope_k = 1/10
  
 class PerturbedReynSol:
     def __init__(self, height, BC, order, reyn_pressure, reyn_velocity):
@@ -39,8 +37,6 @@ class PerturbedReynSol:
         self.p0s = reyn_pressure.ps_2D /self.P_scale
         
         delta = self.y_scale/self.x_scale
-
-        self.is_pwl_height = isinstance(height, PWL_Height)
 
         if order > 1:
 

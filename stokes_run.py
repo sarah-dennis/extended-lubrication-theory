@@ -13,54 +13,35 @@ import boundary as bc
 
 zoom_on = False   
 
-max_iters = 500000 
 #------------------------------------------------------------------------------
-
-h_in = 2
-h_out = 1
+Example = examples.BFS
+h_inlet = 2
+h_outlet = 1
 l_in = 8
 l_out=8
-args = [h_in, h_out, l_in, l_out]
-Example = examples.BFS
+args = [h_inlet, h_outlet, l_in, l_out]
 
 #------------------------------------------------------------------------------
-
-# H=2
-# L=16
-# delta=1 
-# args = [H, L, delta]
-# Example = examples.BFS_pwl
-#------------------------------------------------------------------------------
-
-# H=2
-# h=1
-# L=16
-# delta = 8 #slope: -delta*(H-h)/4
-# args = [H, h, L, delta]
-# Example = examples.Logistic
-#------------------------------------------------------------------------------
-
-# H = 1
-# delta = 1/4
-# k = 2 #int 
-# l = 1
-# L = 8
-# args = [H, delta, k,  l, L]
-# Example = examples.Sinusoid
-
-#------------------------------------------------------------------------------
-# H = 2
-# L = 4
-# args = [H, L]
-# Example = examples.TriCavity
-
-#------------------------------------------------------------------------------
-
-l=7
-h=1
-H = 2
-args =  [h, H, h, l, 1.25, 0.75, l]
 Example = examples.TriSlider
+
+l_in = 7
+l_out = l_in
+h_in = 1 
+h_out = h_in
+h_vertex = 2
+l_a = 1.25
+l_b = 0.75
+args =  [h_in, h_vertex, h_out, l_in, l_a, l_b, l_out]
+
+
+#------------------------------------------------------------------------------
+# Example = examples.Logistic
+
+# h_in = 1
+# h_out = 2
+# L_total = 16
+# delta = 8         #slope: delta*(h_in-h_out)/4
+# args = [h_in, h_out, L_total, delta]
 
 #------------------------------------------------------------------------------
 
@@ -72,27 +53,24 @@ BC = bc.Mixed(U,Q)
 
 #------------------------------------------------------------------------------
 
-solver = control.Stokes_Solver(Example, args, BC, Re, max_iters=max_iters)                
+Solver = control.Stokes_Solver(Example, args, BC, Re)                
 
 N=80
 
-       
+# Solver.new_run(N) 
 
-# solver.new_run(10) 
+Solver.load_run(N)
+# Solver.load_scale(N,2*N) 
+
+k = 4
 
 
-# solver.load_scale(20,40) 
-solver.load_run(40)
+# Solver.new_run_many(N, 2, k)  
+# Solver.load_run_new_many(N, 2, k)
 
-# solver.load_run_many(20, 2, 4)
+# Solver.load_run_many(N, 2, k)
 
-# solver.new_run_many(N, 2, 3)  
-# solver.load_run_new_many(N, 2, 3)
-
-solver.load_plot(40, zoom=zoom_on)
-
-# ------------------------------------------------------------------------------
-# solver.compare(10,[20,40,80],160)
+Solver.load_plot(N, zoom=zoom_on)
 
 
 

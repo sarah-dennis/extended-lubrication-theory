@@ -10,7 +10,6 @@ from scipy.interpolate import interpn
 
 import graphics
 import readwrite as rw
-import convergence as cnvg
 import stokes_pressure as pressure
 
 #------------------------------------------------------------------------------
@@ -21,7 +20,7 @@ from stokes_solver import run_spLU
 # zoom plot
 lenx = 4
 leny = 2
-x_start = 6
+x_start = 6 
 y_start = 0
 x_stop= x_start + lenx
 y_stop = y_start + leny
@@ -37,7 +36,7 @@ log_cmap_on = False
 
 #---------------------------------------------------------------------------
 class Stokes_Solver:
-    def __init__(self, Example, args, BC, Re, max_iters=50000):
+    def __init__(self, Example, args, BC, Re):
 
         self.Example = Example
         self.args = args
@@ -47,7 +46,7 @@ class Stokes_Solver:
         self.Re = Re
         
         # iterative solution args
-        self.max_iters = max_iters
+        self.max_iters = 500000
         self.write_mod = 500
         self.error_mod = 500
         self.err_tol = 1e-8
@@ -132,19 +131,8 @@ class Stokes_Solver:
         u = np.flip(u, axis=0)
         v = -np.flip(v, axis=0) 
         
-        return p, u, v
+        return p, u, v, psi
 
-#------------------------------------------------------------------------------
-# Error
-#------------------------------------------------------------------------------
-    def compare(self, N_min, Ns, N_max,p_err=True):
-        
-        l1_errs, l2_errs, inf_errs, cnvg_rates, ex_min = cnvg.stokes_cnvg_self(self.Example, self.args, self.BC, self.Re, N_min, Ns, N_max,p_err)
-        title = "Iterative Error Convergence for Stokes $\Psi(x,y)$"
-        ax_labels = ["$N$", "$||\psi _{N^{*}} - \psi_{N}||_p$"]
-        leg_labels = ['$L^1$', '$L^2$','$L^\infty$']
-        
-        graphics.plot_log_multi([l1_errs, l2_errs, inf_errs], [N_min]+Ns, title, leg_labels, ax_labels, linthresh=log_linthresh, bigO_on=True, loc='lower',log_x=True, log_y=True, colors='pri')
 #------------------------------------------------------------------------------
 # PLOTTING 
 #------------------------------------------------------------------------------

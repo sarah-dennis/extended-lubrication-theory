@@ -42,8 +42,6 @@ class Height(Domain):
         self.H_in = hs[0]                              # inlet h(x0)
         self.H_out = hs[-1]                            # outlet h
         self.i_peaks = i_peaks                         # x-indices of h(x) discontinuities
-    
-        self.h_min = min(self.hs) #TODO
       
     
 # Domain for Stokes solver

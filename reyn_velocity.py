@@ -29,8 +29,7 @@ class Reyn_Velocity(Velocity):
             
         u, v = self.make_velocity(height, BC.U, Q)
         super().__init__(Q, u, v)
-        
-    # 2D velocity field from 1D pressure 
+
     def make_velocity(self, height, U, Q):
 
         u = np.zeros((height.Ny, height.Nx))
@@ -59,11 +58,13 @@ class VA_ELT_Velocity(Velocity):
     
     def __init__(self, height, BC, adj_pressure):
         u, v = elt_v.make_ELT_velocity(height, BC, adj_pressure)
+        
         if isinstance(BC, bc.Mixed):
             Q = BC.Q
         else:
             h0=height.hs[0]
             px0 = domain.right_first(height.dx, adj_pressure.ps_2D[0,0:3])
-            Q = (BC.U*h0)/2 - (px0*(h0**3))/12 #/visc
+            Q = (BC.U*h0)/2 - (px0*(h0**3))/12
+            
         super().__init__(Q, u, v)
         

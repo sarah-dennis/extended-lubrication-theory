@@ -16,7 +16,6 @@ def fd_solve(height, BC):
     ps_1D = np.linalg.solve(mat, rhs)
     return ps_1D
 
-# Reynolds rhs
 def make_rhs(height, BC):
     rhs = np.zeros(height.Nx) 
     rhs = 6 * BC.U * height.hxs

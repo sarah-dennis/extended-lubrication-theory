@@ -12,7 +12,7 @@ from numpy.linalg import solve as np_solve
 
 import reyn_pressure_finDiff as fd
 
-import reyn_pressure_adjusted
+import reyn_pressure_ELT
 
 
 class Pressure:
@@ -58,7 +58,7 @@ class VA_ELT_Pressure(Pressure):
         
         reyn_pressure = FinDiff_ReynPressure(height, BC)
         ps_1D = reyn_pressure.ps_1D
-        ps_2D, reyn_derivs, sigma_derivs = reyn_pressure_adjusted.make_adj_ps(height, BC, ps_1D, TG=False)
+        ps_2D, reyn_derivs, sigma_derivs = reyn_pressure_ELT.make_adj_ps(height, BC, ps_1D, TG=False)
     
         self.reyn_pxs, self.reyn_p2xs, self.reyn_p3xs, self.reyn_p4xs = reyn_derivs
         self.sigmas,self.sigma_xs,self.sigma_2xs = sigma_derivs
@@ -73,7 +73,7 @@ class TG_ELT_Pressure(Pressure):
         reyn_pressure = FinDiff_ReynPressure(height, BC)
 
         ps_1D = reyn_pressure.ps_1D
-        ps_2D, reyn_derivs, _ = reyn_pressure_adjusted.make_adj_ps(height, BC, ps_1D, TG=True)
+        ps_2D, reyn_derivs, _ = reyn_pressure_ELT.make_adj_ps(height, BC, ps_1D, TG=True)
     
 
         self.reyn_pxs, self.reyn_p2xs, self.reyn_p3xs, self.reyn_p4xs = reyn_derivs
