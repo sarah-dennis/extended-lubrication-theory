@@ -87,7 +87,7 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
     A.) Reynolds solver
     
           #--------------------------------------------------------------------    
-            Solver.fd_solve(N, plot=plots_on, scaled=scaled_on, zoom=zoom_on)
+            Solver.fd_solve(N, plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------
     
       --> see reyn_finDiff.py, reyn_velocity.py   
@@ -95,7 +95,7 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
     B.) T.G.-ELT solver 
     
           #--------------------------------------------------------------------   
-            Solver.fd_TG_ELT_solve(N, plot=plots_on, scaled=scaled_on, zoom=zoom_on)
+            Solver.fd_TG_ELT_solve(N, plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------   
         
       --> see reyn_pressure_ELT.py, reyn_velocity.py
@@ -103,18 +103,17 @@ To use the Reynolds, PLT, or ELT solvers, use file reyn_run.py
     C.) VA-ELT solver
     
           #--------------------------------------------------------------------   
-            Solver.fd_VA_ELT_solve(N, plot=plots_on, scaled=scaled_on, zoom=zoom_on)
+            Solver.fd_VA_ELT_solve(N, plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------  
           
       --> see reyn_pressure_ELT.py, reyn_velocity_ELT.py
           
     D.) PLT solver
     
-        - epsilon^2 PLT : order = 2 
-        - epsilon^4 PLT : order = 4 
-          
           #--------------------------------------------------------------------   
-            Solver.fd_pert_solve(N, order=4,  plot=plots_on, scaled=scaled_on, zoom=zoom_on)
+            Solver.fd_pert_solve(N, order=2,  plot=plots_on,  zoom=zoom_on)
+            
+            Solver.fd_pert_solve(N, order=4,  plot=plots_on, zoom=zoom_on)
           #--------------------------------------------------------------------   
 
       --> see reyn_perturbed.py
@@ -154,10 +153,10 @@ To use the Stokes solver, use file stokes_run.py
     - Solver: class with solve methods
     - N: grid scale (dx = 1/N)
     - Re: Reynolds number for stream-velocity Navier-Stokes equations (use Re=0 for Stokes solver)
-    - max_iters: maximum iterations (defaults to max_iters = 500000)
     
           #--------------------------------------------------------------------    
-            Solver = control.Stokes_Solver(Example, args, BC, Re=0, max_iters=max_iters) 
+            Solver = control.Stokes_Solver(Example, args, BC, Re=0) 
+            
             N = 160
           #--------------------------------------------------------------------    
           
