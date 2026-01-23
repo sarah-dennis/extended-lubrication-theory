@@ -153,7 +153,6 @@ To use the Stokes solver, use file stokes_run.py
     - The iterative solver will run until the error in the stream function between
       iterations falls below 10^-8, or until the maximum number of iterations has been reached
     - The solver checks this error and saves the current solution every 500 iterations
-    - The solver will also print the current error and iteration number to the console
     - The parameters {err_tol, max_iters, error_mod, write_mod} can be updated in stokes_control.py
     - Solutions are written to ./stokes_examples/example_name/example_name_N
 
