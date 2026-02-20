@@ -11,7 +11,7 @@ import reyn_examples as examples
 
 #-------------------plotting---------------------------------------------------
 plots_on = True
-zoom_on =   False    # plot a zoomed-in window, set window position in reyn_control.py
+zoom_on =  not False    # plot a zoomed-in window, set window position in reyn_control.py
 
 #------------------------------------------------------------------------------
 # Examples
@@ -57,14 +57,14 @@ BC = bc.Mixed(U, Q)
 
 Solver = control.Reynolds_Solver(Example, BC, args)
 
-N = 60
+N = 320
 
 #------------------------------------------------------------------------------
 
 Solver.fd_solve(N, plot=plots_on, zoom=zoom_on)
 
-Solver.fd_TG_ELT_solve(N, plot=plots_on, zoom=zoom_on)
+# Solver.fd_TG_ELT_solve(N, plot=plots_on, zoom=zoom_on)
 
-Solver.fd_VA_ELT_solve(N, plot=plots_on, zoom=zoom_on)
+# Solver.fd_VA_ELT_solve(N, plot=plots_on, zoom=zoom_on)
 
-Solver.fd_pert_solve(N, order=4,  plot=plots_on, zoom=zoom_on)
+# Solver.fd_pert_solve(N, order=4,  plot=plots_on, zoom=zoom_on)

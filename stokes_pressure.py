@@ -6,21 +6,21 @@ Created on Wed Aug 28 11:58:25 2024
 """
 import numpy as np
 
-def resistance(ex, p):
+def dp(ex, p):
     
     p_2D = p.reshape((ex.Ny,ex.Nx))
-    
+    # Lx = ex.xf - ex.x0
+    # U_star = ex.BC.Q/Lx
+    # P_star = U_star/Lx
+    # p_2D_scaled = p_2D / P_star
+    # dy_scaled = ex.dy /Lx
     if ex.H_in != 0 and ex.H_out != 0:
-        dp = (sum(p_2D[:,0])/ex.H_in - sum(p_2D[:,-1])/ex.H_out)*ex.dy
+
+        dp = (sum(p_2D[:,0]) - sum(p_2D[:,-1]))*ex.dy
+        # dp_scaled = (sum(p_2D_scaled[:,0]) - sum(p_2D_scaled[:,-1]))*dy_scaled
     else:
         dp = 0
-    
-    if ex.BC.Q!=0:
-        r = dp/ex.BC.Q
-        return dp, r
-    
-    else:
-        return dp, np.inf
+    return dp
 
 
 def pressure(ex, u, v):

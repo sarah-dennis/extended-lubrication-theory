@@ -23,7 +23,7 @@ y_stop = y_start + leny
 # colorbar min max
 vel_max = 5
 p_min= 0
-p_max = 40
+p_max = 120
 
 # log plots
 log_linthresh=1e-8  
@@ -129,12 +129,9 @@ class Reynolds_Solver:
     
     def p_plot(self, height, pressure, flux, solver_title, zoom=False):
 
-        ps_2D = np.nan_to_num(pressure.ps_2D)
-
-        dp_dim = (sum(ps_2D[:,0])/height.hs[0] - sum(ps_2D[:,-1])/height.hs[-1])*height.dy
+        dp = pressure.dp
         
-   
-        paramstr = "$Q=%.2f$, $U=%.1f$, $\Delta p=%.2f$"%(flux, self.BC.U, dp_dim)
+        paramstr = "$Q=%.2f$, $U=%.1f$, $\Delta p=%.2f$"%(flux, self.BC.U, dp)
         p_title = solver_title +'\n' + paramstr
         p_labels = ["$p$", "$x$","$y$"]
        
@@ -148,11 +145,8 @@ class Reynolds_Solver:
     
     def v_plot(self, BC, height, velocity, pressure, solver_title,  zoom=False):
         
-        ps_2D = np.nan_to_num(pressure.ps_2D)
-
-        dp_dim = (sum(ps_2D[:,0])/height.hs[0] - sum(ps_2D[:,-1])/height.hs[-1])*height.dy
-        
-        paramstr = "$Q=%.2f$, $U=%.2f$, $\Delta p=%.2f$"%(velocity.Q, self.BC.U, dp_dim)
+        dp = pressure.dp
+        paramstr = "$Q=%.2f$, $U=%.2f$, $\Delta p=%.2f$"%(velocity.Q, self.BC.U, dp)
         v_title = solver_title + '\n' + paramstr
         v_ax_labels =  ['$|(  u,  v)|_2$','$x$', '$y$']  
         uv_mag = np.sqrt((velocity.u)**2 + (velocity.v)**2)

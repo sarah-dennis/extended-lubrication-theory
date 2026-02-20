@@ -154,7 +154,7 @@ class Stokes_Solver:
 
     # Pressure plot: 
         p = pressure.pressure(ex, u, v)
-        dp, res = pressure.resistance(ex, p) 
+        dp = pressure.dp(ex, p) 
         
         p_2D = p.reshape((ex.Ny,ex.Nx))
         dp_str = ', $\Delta p =%.2f$'%(dp)

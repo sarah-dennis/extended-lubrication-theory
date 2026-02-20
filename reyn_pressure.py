@@ -31,6 +31,7 @@ class Pressure:
             ps_2D = self.make_2D_ps(height)
             
         self.ps_2D = ps_2D # = None if ps_1D = ps_2D
+        self.dp = self.get_dp(height)
      
     def make_2D_ps(self, height): # p(x,y) = p(x) 
          ps_2D = np.zeros((height.Ny, height.Nx))
@@ -46,6 +47,13 @@ class Pressure:
                 
          return ps_2D
                     
+    def get_dp(self, height):
+        
+        ps_2D = np.nan_to_num(self.ps_2D)
+
+        dp = (sum(ps_2D[:,0]) - sum(ps_2D[:,-1]))*height.dy
+        return dp
+        
 class FinDiff_ReynPressure(Pressure):
     def __init__(self, height, BC):
         ps_1D = fd.fd_solve(height, BC)

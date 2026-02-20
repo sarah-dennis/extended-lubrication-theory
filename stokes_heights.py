@@ -166,6 +166,22 @@ class PWLinear(Space):
 
        return scale
    
+    def scale_S(self, i,j):
+        # x = self.xs[i]     #int
+        # y = self.ys[j] 
+        y_N = self.ys[j+1]
+        y_S = self.ys[j-1]
+        h = self.hs[i][0] # arbitrary 
+        y_bdry = h
+   
+        l1 = np.abs(y_S-y_bdry)
+        l2 = np.abs(y_N-y_bdry) 
+       
+        scale = l1/l2        
+   
+        # print(scale)
+        # print('s', scale<1)
+        return scale
 
 
     def scale_E(self, i,j): #E: (s=i+1, t=j)

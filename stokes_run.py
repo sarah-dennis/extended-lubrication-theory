@@ -22,23 +22,23 @@ l_out=8
 args = [h_inlet, h_outlet, l_in, l_out]
 
 #------------------------------------------------------------------------------
-Example = examples.TriSlider
+# Example = examples.TriSlider
 
-l_in = 7
-l_out = l_in
-h_in = 1 
-h_out = h_in
-h_vertex = 2
-l_a = 1.25
-l_b = 0.75
-args =  [h_in, h_vertex, h_out, l_in, l_a, l_b, l_out]
+# l_in = 7
+# l_out = l_in
+# h_in = 1 
+# h_out = h_in
+# h_vertex = 2
+# l_a = 1.25
+# l_b = 0.75
+# args =  [h_in, h_vertex, h_out, l_in, l_a, l_b, l_out]
 
 
 #------------------------------------------------------------------------------
 # Example = examples.Logistic
 
-# h_in = 1
-# h_out = 2
+# h_in = 2
+# h_out = 1
 # L_total = 16
 # delta = 8         #slope: delta*(h_in-h_out)/4
 # args = [h_in, h_out, L_total, delta]
@@ -59,10 +59,10 @@ N=80
 
 # Solver.new_run(N) 
 
-Solver.load_run(N)
+# Solver.load_run(N)
 # Solver.load_scale(N,2*N) 
 
-k = 4
+# k = 4
 
 
 # Solver.new_run_many(N, 2, k)  

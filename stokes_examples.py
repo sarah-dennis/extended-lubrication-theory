@@ -9,10 +9,11 @@ from stokes_heights import PWLinear
 
 class BFS(PWLinear):
     def __init__ (self, args, BC, Re, N):
-        h_in, h_out, l_in, l_total = args
+        h_in, h_out, l_in, l_out = args
+        
+        l_total = l_in + l_out
         x0 = 0
         xf = l_total
-  
         x_peaks = [0, l_in, l_total]
         y0 = 0
         yf = max(h_in,h_out) 
