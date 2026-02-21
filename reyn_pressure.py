@@ -52,6 +52,7 @@ class Pressure:
         ps_2D = np.nan_to_num(self.ps_2D)
 
         dp = (sum(ps_2D[:,0]) - sum(ps_2D[:,-1]))*height.dy
+        
         return dp
         
 class FinDiff_ReynPressure(Pressure):

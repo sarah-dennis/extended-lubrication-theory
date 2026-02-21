@@ -9,15 +9,9 @@ import numpy as np
 def dp(ex, p):
     
     p_2D = p.reshape((ex.Ny,ex.Nx))
-    # Lx = ex.xf - ex.x0
-    # U_star = ex.BC.Q/Lx
-    # P_star = U_star/Lx
-    # p_2D_scaled = p_2D / P_star
-    # dy_scaled = ex.dy /Lx
     if ex.H_in != 0 and ex.H_out != 0:
-
         dp = (sum(p_2D[:,0]) - sum(p_2D[:,-1]))*ex.dy
-        # dp_scaled = (sum(p_2D_scaled[:,0]) - sum(p_2D_scaled[:,-1]))*dy_scaled
+        
     else:
         dp = 0
     return dp

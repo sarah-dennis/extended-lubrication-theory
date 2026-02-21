@@ -22,7 +22,7 @@ y_stop = y_start + leny
 
 # colorbar min max
 vel_max = 5
-p_min= 0
+p_min= 60
 p_max = 120
 
 # log plots

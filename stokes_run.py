@@ -14,12 +14,12 @@ import boundary as bc
 zoom_on = False   
 
 #------------------------------------------------------------------------------
-Example = examples.BFS
-h_inlet = 2
-h_outlet = 1
-l_in = 8
-l_out=8
-args = [h_inlet, h_outlet, l_in, l_out]
+# Example = examples.BFS
+# h_inlet = 2
+# h_outlet = 1
+# l_in = 8
+# l_out=8
+# args = [h_inlet, h_outlet, l_in, l_out]
 
 #------------------------------------------------------------------------------
 # Example = examples.TriSlider
@@ -35,13 +35,13 @@ args = [h_inlet, h_outlet, l_in, l_out]
 
 
 #------------------------------------------------------------------------------
-# Example = examples.Logistic
+Example = examples.Logistic
 
-# h_in = 2
-# h_out = 1
-# L_total = 16
-# delta = 8         #slope: delta*(h_in-h_out)/4
-# args = [h_in, h_out, L_total, delta]
+h_in = 2
+h_out = 1
+L_total = 16
+lam = 8         #slope: lam*(h_in-h_out)/4
+args = [h_in, h_out, L_total, lam]
 
 #------------------------------------------------------------------------------
 
@@ -55,11 +55,11 @@ BC = bc.Mixed(U,Q)
 
 Solver = control.Stokes_Solver(Example, args, BC, Re)                
 
-N=80
+N=160
 
 # Solver.new_run(N) 
 
-# Solver.load_run(N)
+Solver.load_run(N)
 # Solver.load_scale(N,2*N) 
 
 # k = 4
