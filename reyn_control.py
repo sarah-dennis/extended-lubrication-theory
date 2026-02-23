@@ -14,7 +14,7 @@ import reyn_PLT as rpert
 
 # zoom plot
 lenx = 4
-leny = 2
+leny = 1
 x_start = 6
 y_start = 0
 x_stop= x_start + lenx
@@ -23,7 +23,7 @@ y_stop = y_start + leny
 # colorbar min max
 vel_max = 5
 p_min= 60
-p_max = 120
+p_max = 200
 
 # log plots
 log_linthresh=1e-8  

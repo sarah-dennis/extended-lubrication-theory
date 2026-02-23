@@ -25,23 +25,23 @@ zoom_on =  not False    # plot a zoomed-in window, set window position in reyn_c
 # args =  [h_inlet, h_outlet, l_inlet, L_total]
 
 #-----------------------------------------------------------------------------
-# Example = examples.TriSlider
-# h_in=1
-# h_vertex=2
-# h_out = h_in
-# l_in = 7
-# l_out = l_in
-# l_a = 1.25
-# l_b = 0.75
-# args =  [h_in, h_vertex, h_out, l_in, l_a, l_b, l_out]
+Example = examples.TriSlider
+h_in=1
+h_vertex=1/2
+h_out = h_in
+l_in = 7
+l_out = l_in
+l_a = 1.25
+l_b = 0.75
+args =  [h_in, h_vertex, h_out, l_in, l_a, l_b, l_out]
 
 #-----------------------------------------------------------------------------
-Example = examples.Logistic
-lam = 8     # max slope: lam*(h_in-hout)/4
-h_in = 2     
-h_out = 1    
-L_total = 16     
-args = [ h_in, h_out, L_total, lam]
+# Example = examples.Logistic
+# lam = 8     # max slope: lam*(h_in-hout)/4
+# h_in = 2     
+# h_out = 1    
+# L_total = 16     
+# args = [ h_in, h_out, L_total, lam]
 
 #------------------------------------------------------------------------------
 # boundary conditions
@@ -66,7 +66,5 @@ Solver.fd_solve(N, plot=plots_on, zoom=zoom_on)
 Solver.fd_TG_ELT_solve(N, plot=plots_on, zoom=zoom_on)
 
 Solver.fd_VA_ELT_solve(N, plot=plots_on, zoom=zoom_on)
-
-Solver.fd_pert_solve(N, order=2,  plot=plots_on, zoom=zoom_on)
 
 Solver.fd_pert_solve(N, order=4,  plot=plots_on, zoom=zoom_on)

@@ -91,7 +91,7 @@ def plot_2D_multi(fs, xs, title, fun_labels, ax_labels, loc='upper', colors='pri
         ax.plot(xs, fs[i], label=fun_labels[i], color=cs[i], linewidth=0.8, marker=markers[i])
     
     # ax.set_xlim([None, 18])
-    # ax.set_ylim([0.25*np.min(fs),min(1.1*np.max(fs),25)])
+    ax.set_ylim([0.25*np.min(fs),min(1.1*np.max(fs),25)])
 
     # ax.set_ylim([2,min(1.1*np.max(fs),5)])
 

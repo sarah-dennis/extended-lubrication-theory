@@ -199,14 +199,14 @@ class Stokes_Solver:
         
     # Stream plot:
     
-        ax_labels = ['$\psi(x,y)$', '$x$', '$y$']
-        title = 'Stream $\psi(x,y)$ \n' + ex.spacestr + dp_str
-        stream_2D = psi.reshape((ex.Ny,ex.Nx))
-        stream_2D_ma = np.ma.masked_where(ex.space==-1, stream_2D)
-        stream_2D_ma = np.flip(stream_2D_ma, axis=0)
-        if zoom:
-            stream_2D_zoom = graphics.grid_zoom_2D(stream_2D_ma, ex, x_start, x_stop, y_start, y_stop)
-            graphics.plot_contour_mesh(stream_2D_zoom, xs_zoom, ys_zoom, title, ax_labels, log_cmap=log_cmap_on, n_contours=20, vmin=None, vmax=ex.BC.Q)
-        else:
-            graphics.plot_contour_mesh(stream_2D_ma, xs, ys, title, ax_labels, log_cmap=log_cmap_on, n_contours=20, vmin=None, vmax=ex.BC.Q)
+        # ax_labels = ['$\psi(x,y)$', '$x$', '$y$']
+        # title = 'Stream $\psi(x,y)$ \n' + ex.spacestr + dp_str
+        # stream_2D = psi.reshape((ex.Ny,ex.Nx))
+        # stream_2D_ma = np.ma.masked_where(ex.space==-1, stream_2D)
+        # stream_2D_ma = np.flip(stream_2D_ma, axis=0)
+        # if zoom:
+        #     stream_2D_zoom = graphics.grid_zoom_2D(stream_2D_ma, ex, x_start, x_stop, y_start, y_stop)
+        #     graphics.plot_contour_mesh(stream_2D_zoom, xs_zoom, ys_zoom, title, ax_labels, log_cmap=log_cmap_on, n_contours=20, vmin=None, vmax=ex.BC.Q)
+        # else:
+        #     graphics.plot_contour_mesh(stream_2D_ma, xs, ys, title, ax_labels, log_cmap=log_cmap_on, n_contours=20, vmin=None, vmax=ex.BC.Q)
         return dp

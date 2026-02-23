@@ -11,7 +11,7 @@ import stokes_control as control
 import stokes_examples as examples
 import boundary as bc
 
-zoom_on = False   
+zoom_on = True  
 
 #------------------------------------------------------------------------------
 # Example = examples.BFS
@@ -40,7 +40,7 @@ Example = examples.Logistic
 h_in = 2
 h_out = 1
 L_total = 16
-lam = 8         #slope: lam*(h_in-h_out)/4
+lam = 32        #slope: lam*(h_in-h_out)/4
 args = [h_in, h_out, L_total, lam]
 
 #------------------------------------------------------------------------------
@@ -59,7 +59,7 @@ N=160
 
 # Solver.new_run(N) 
 
-Solver.load_run(N)
+# Solver.load_run(N)
 # Solver.load_scale(N,2*N) 
 
 # k = 4
